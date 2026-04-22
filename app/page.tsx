@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import ExpertiseTile from "@/components/ExpertiseTile";
+import Banner from "@/components/Banner";
 import TestimonialCard from "@/components/TestimonialCard";
 import ServiceTile from "@/components/ServiceTile";
+import LogoMarquee from "@/components/LogoMarquee";
 import {
   EXPERTISE_TILES,
   HOME_SERVICES,
@@ -14,196 +15,231 @@ import {
 } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Qbitum Solutions — Product & Cloud Engineering for Startups",
+  title: "Qbitum Solutions — AI Engineering for Ambitious Companies",
 };
 
 export default function HomePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden" style={{ minHeight: "100vh", background: "#07080f" }}>
-        {/* Hero background image with heavy dark overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/banner-home.jpg"
-            alt="Hero"
-            fill
-            className="object-cover"
-            priority
-            style={{ opacity: 0.12 }}
-          />
-        </div>
+      <Banner
+        variant="hero"
+        imageSrc="/images/banner-home.jpg"
+        imageAlt="Qbitum — AI Engineering"
+        labelText="Qbitum Solutions"
+        headline="We Build AI & Engineer the Future."
+        subtext="We help enterprises adopt, build, and scale AI solutions — delivering production systems and empowering the teams that run them."
+        ctaHref="/contact"
+        ctaLabel="Start Your Transformation"
+      />
 
-        {/* Ambient glow orbs */}
-        <div className="glow-orb animate-pulse-glow" style={{ width: 600, height: 600, background: "radial-gradient(circle, rgba(124,111,208,0.18) 0%, transparent 70%)", top: "-10%", left: "-5%" }} />
-        <div className="glow-orb animate-pulse-glow" style={{ width: 500, height: 500, background: "radial-gradient(circle, rgba(15,184,160,0.12) 0%, transparent 70%)", bottom: "-5%", right: "5%", animationDelay: "2s" }} />
-        <div className="glow-orb" style={{ width: 300, height: 300, background: "radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%)", top: "30%", right: "20%" }} />
+      {/* ── LOGO MARQUEE ─────────────────────────────────────────────── */}
+      <LogoMarquee />
 
-        {/* Dot grid overlay */}
-        <div className="absolute inset-0 dot-grid opacity-20" />
-
-        {/* Content */}
-        <div className="relative z-10 max-w-[1440px] mx-auto px-8 flex flex-col justify-center" style={{ minHeight: "100vh", paddingTop: "10vh", paddingBottom: "10vh" }}>
-          {/* Label */}
-          <div className="flex items-center gap-3 mb-8 animate-fade-up">
-            <div className="w-8 h-px" style={{ background: "#0fb8a0" }} />
-            <span className="section-label">AI-Powered Engineering</span>
-          </div>
-
-          {/* Main headline */}
-          <h1
-            className="font-extrabold leading-[1.0] mb-8 animate-fade-up-delay-1"
-            style={{
-              fontFamily: "var(--font-syne)",
-              fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
-              maxWidth: "900px",
-              color: "#f0f2f8",
-            }}
-          >
-            Powering Startups{" "}
-            <span className="gradient-text">with Cutting-Edge</span>{" "}
-            Engineering.
-          </h1>
-
-          {/* Subtext */}
+      {/* ── ABOUT / STATS ────────────────────────────────────────────── */}
+      <section className="py-28" style={{ background: "#07080f" }}>
+        <div className="max-w-[1440px] mx-auto px-8">
+          <p className="section-label mb-8">About Qbitum</p>
           <p
-            className="text-lg mb-12 animate-fade-up-delay-2"
+            className="font-normal mb-20"
             style={{
-              color: "#8892a4",
-              maxWidth: "560px",
-              lineHeight: 1.7,
-              fontFamily: "var(--font-dm-sans)",
+              fontFamily: "var(--font-sans)",
+              fontSize: "clamp(1.35rem, 2.4vw, 2rem)",
+              color: "#f0f2f8",
+              lineHeight: 1.5,
+              maxWidth: "900px",
+              letterSpacing: "-0.01em",
             }}
           >
-            We build world-class products, cloud infrastructure, and AI systems
-            that help startups and enterprises move faster and scale smarter.
+            We deliver tailored AI solutions that empower your business to lead and
+            grow. By understanding your unique challenges, our team provides the
+            strategic insights and engineering depth needed to ensure your success.
           </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
-            <Link href="/contact" className="btn-glow px-8 py-4 text-sm">
-              Start a Project
-            </Link>
-            <Link href="/services" className="btn-outline-glow px-8 py-4 text-sm">
-              Explore Services
-            </Link>
-          </div>
 
           {/* Stats row */}
           <div
-            className="flex flex-wrap gap-10 mt-20 pt-10 animate-fade-up-delay-3"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-0"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
           >
             {[
               { value: "10+", label: "Years of engineering" },
               { value: "50+", label: "Products shipped" },
               { value: "3×", label: "Faster time to market" },
               { value: "24/7", label: "Dedicated support" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-3xl font-extrabold gradient-text-purple" style={{ fontFamily: "var(--font-syne)" }}>
+            ].map((stat, i) => (
+              <div
+                key={stat.label}
+                className="py-10 px-8 flex flex-col gap-3"
+                style={{
+                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.07)" : "none",
+                }}
+              >
+                <p
+                  className="stat-value"
+                  style={{
+                    fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
+                    color: "#f0f2f8",
+                    lineHeight: 1,
+                  }}
+                >
                   {stat.value}
                 </p>
-                <p className="text-xs mt-1" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
+                <p
+                  className="mono text-xs uppercase tracking-widest"
+                  style={{ color: "#4a5568" }}
+                >
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Bottom fade into next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #07080f)" }} />
       </section>
 
-      {/* ── AI SERVICES GRID ─────────────────────────────────────────── */}
-      <section className="py-28" style={{ background: "#07080f" }}>
-        <div className="max-w-[1440px] mx-auto px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
-            <div>
-              <p className="section-label mb-4">What we build</p>
-              <h2 className="text-4xl lg:text-5xl font-extrabold leading-tight" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8", maxWidth: "480px" }}>
-                AI Services &{" "}
-                <span className="gradient-text">Expertise</span>
-              </h2>
+      {/* ── WHAT WE BUILD — Photo Cards ──────────────────────────────── */}
+      <section style={{ background: "#07080f" }}>
+        <div className="max-w-[1440px] mx-auto px-8 pb-10">
+          <p className="section-label mb-4">What we build</p>
+          <h2
+            className="font-bold leading-tight mb-4"
+            style={{
+              fontFamily: "var(--font-sans)",
+              color: "#f0f2f8",
+              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            AI Services &amp; Expertise
+          </h2>
+          <p
+            className="text-base mb-10"
+            style={{ color: "#8892a4", maxWidth: "520px", lineHeight: 1.7 }}
+          >
+            Accelerate your business by harnessing the power of innovative cloud
+            engineering and AI solutions built for scale.
+          </p>
+        </div>
+
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          style={{ height: "clamp(420px, 55vw, 680px)" }}
+        >
+          {EXPERTISE_TILES.map((tile, i) => (
+            <div
+              key={tile.title}
+              className="relative overflow-hidden group cursor-pointer"
+              style={{
+                borderRight: i < EXPERTISE_TILES.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                borderTop: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              <Image
+                src={tile.image}
+                alt={tile.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(7,8,15,0.96) 0%, rgba(7,8,15,0.5) 55%, rgba(7,8,15,0.15) 100%)" }}
+              />
+              <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                <span className="mono text-xs" style={{ color: "rgba(212,168,83,0.7)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {tile.tags.map((tag) => (
+                      <span key={tag} className="tag-chip">{tag}</span>
+                    ))}
+                  </div>
+                  <h3 className="text-xl font-bold text-white" style={{ fontFamily: "var(--font-sans)" }}>
+                    {tile.title}
+                  </h3>
+                  <p
+                    className="mt-3 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ color: "#8892a4" }}
+                  >
+                    {tile.description}
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="text-sm leading-relaxed lg:max-w-xs" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
-              Accelerate your startup by harnessing the power of innovative cloud
-              engineering and AI solutions built for scale.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {EXPERTISE_TILES.map((tile) => (
-              <ExpertiseTile key={tile.title} {...tile} />
-            ))}
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-[1440px] mx-auto px-8"><div className="divider-gradient" /></div>
-
-      {/* ── SERVICES & EXPERTISE ROWS ────────────────────────────────── */}
+      {/* ── HOW WE DELIVER — Clean 3-col Cards (replaces awkward 4-col table) */}
       <section className="py-28" style={{ background: "#07080f" }}>
         <div className="max-w-[1440px] mx-auto px-8">
           <p className="section-label mb-4">How we deliver</p>
-          <h2 className="text-4xl lg:text-5xl font-extrabold mb-16" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8" }}>
-            Services & Expertise
+          <h2
+            className="text-4xl lg:text-5xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-sans)", color: "#f0f2f8", letterSpacing: "-0.02em" }}
+          >
+            Services &amp; Expertise
           </h2>
-          <div className="flex flex-col gap-20">
+          <p
+            className="mb-16"
+            style={{ color: "#8892a4", maxWidth: "520px", lineHeight: 1.7, fontSize: "1rem" }}
+          >
+            We deliver across the full technology stack — from product ideation to AI deployment and scale.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {HOME_SERVICES.map((service, i) => (
               <div
                 key={service.title}
-                className={`flex flex-col lg:flex-row items-center gap-14 ${service.imageLeft ? "lg:flex-row-reverse" : ""}`}
+                className="glass-card glass-card-hover rounded-2xl p-8 flex flex-col gap-5"
               >
-                {/* Image */}
-                <div className="relative w-full lg:w-[560px] h-[360px] rounded-2xl overflow-hidden flex-shrink-0"
-                  style={{ border: "1px solid rgba(255,255,255,0.06)" }}>
-                  <Image src={service.image} alt={service.title} fill className="object-cover" style={{ opacity: 0.85 }} />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(7,8,15,0.4), transparent)" }} />
-                  {/* Number badge */}
-                  <div className="absolute top-6 left-6 w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold"
-                    style={{ background: "rgba(124,111,208,0.8)", fontFamily: "var(--font-syne)", color: "white" }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                </div>
-                {/* Text */}
-                <div className="flex flex-col gap-5">
-                  <h3 className="text-3xl font-extrabold" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8" }}>
-                    {service.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
-                    {service.description}
-                  </p>
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center gap-2 text-sm font-semibold"
-                    style={{ color: "#a094e8", fontFamily: "var(--font-dm-sans)" }}
-                  >
-                    Learn more
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </Link>
-                </div>
+                <span className="mono text-xs" style={{ color: "#4a5568" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3
+                  className="text-xl font-bold"
+                  style={{ fontFamily: "var(--font-sans)", color: "#f0f2f8", lineHeight: 1.2 }}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className="leading-relaxed flex-1"
+                  style={{ color: "#8892a4", fontSize: "0.95rem" }}
+                >
+                  {service.description}
+                </p>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-xs font-semibold mt-2"
+                  style={{ color: "#a094e8", fontFamily: "var(--font-sans)" }}
+                >
+                  Learn more
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── ALL SERVICES BENTO ───────────────────────────────────────── */}
+      <div className="max-w-[1440px] mx-auto px-8"><div className="divider-gradient" /></div>
+
+      {/* ── ALL SERVICES GRID ────────────────────────────────────────── */}
       <section className="py-24" style={{ background: "#0d0f1a" }}>
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
             <div>
               <p className="section-label mb-4">Full stack</p>
-              <h2 className="text-4xl font-extrabold" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8" }}>
+              <h2
+                className="text-4xl font-bold"
+                style={{ fontFamily: "var(--font-sans)", color: "#f0f2f8", letterSpacing: "-0.02em" }}
+              >
                 All Services
               </h2>
             </div>
-            <Link href="/services" className="btn-outline-glow px-6 py-3 text-sm self-start">
-              View all →
+            <Link href="/services" className="btn-outline-glow px-6 py-3 self-start">
+              View all
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -218,33 +254,48 @@ export default function HomePage() {
       <section className="py-24" style={{ background: "#07080f" }}>
         <div className="max-w-[1440px] mx-auto px-8">
           <p className="section-label mb-4">Across sectors</p>
-          <h2 className="text-4xl font-extrabold mb-14" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8" }}>
-            Industries
+          <h2
+            className="text-4xl font-bold mb-14"
+            style={{ fontFamily: "var(--font-sans)", color: "#f0f2f8", letterSpacing: "-0.02em" }}
+          >
+            Industries We Serve
           </h2>
           <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
             {INDUSTRIES.map((industry) => (
               <div
                 key={industry.name}
-                className="relative flex-shrink-0 w-[280px] lg:w-[340px] h-[460px] rounded-2xl overflow-hidden snap-start group cursor-pointer"
-                style={{ border: "1px solid rgba(255,255,255,0.06)" }}
+                className="relative flex-shrink-0 w-[280px] lg:w-[340px] h-[460px] overflow-hidden snap-start group cursor-pointer"
+                style={{
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  borderRadius: "4px",
+                }}
               >
                 <Image
                   src={industry.image}
                   alt={industry.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ opacity: 0.7 }}
+                  style={{ opacity: 0.8 }}
                 />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(7,8,15,0.95) 0%, rgba(7,8,15,0.3) 50%, transparent 100%)" }} />
-                {/* Purple tint on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: "linear-gradient(to top, rgba(124,111,208,0.2), transparent)" }} />
-                <div className="absolute bottom-8 left-8 right-8">
-                  <p className="text-white font-extrabold text-2xl" style={{ fontFamily: "var(--font-syne)" }}>{industry.name}</p>
-                  <div className="mt-2 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-4 h-px" style={{ background: "#0fb8a0" }} />
-                    <span className="text-xs" style={{ color: "#0fb8a0" }}>Explore</span>
-                  </div>
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(to top, rgba(7,8,15,0.96) 0%, rgba(7,8,15,0.2) 55%, transparent 100%)" }}
+                />
+                {/* Corner accent */}
+                <div className="absolute top-5 left-5 w-4 h-4" style={{ borderTop: "1px solid rgba(15,184,160,0.5)", borderLeft: "1px solid rgba(15,184,160,0.5)" }} />
+                <div className="absolute bottom-8 left-7 right-7">
+                  <p
+                    className="mono text-xs mb-2"
+                    style={{ color: "rgba(212,168,83,0.6)" }}
+                  >
+                    {String(INDUSTRIES.indexOf(industry) + 1).padStart(2, "0")}
+                  </p>
+                  <p
+                    className="text-white font-bold text-2xl"
+                    style={{ fontFamily: "var(--font-sans)" }}
+                  >
+                    {industry.name}
+                  </p>
                 </div>
               </div>
             ))}
@@ -253,10 +304,16 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────── */}
-      <section className="py-24 grid-lines" style={{ background: "#07080f" }}>
+      <section
+        className="py-24"
+        style={{ background: "#07080f", borderTop: "1px solid rgba(255,255,255,0.06)" }}
+      >
         <div className="max-w-[1440px] mx-auto px-8">
           <p className="section-label mb-4">Social proof</p>
-          <h2 className="text-4xl font-extrabold mb-14" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8" }}>
+          <h2
+            className="text-4xl font-bold mb-14"
+            style={{ fontFamily: "var(--font-sans)", color: "#f0f2f8", letterSpacing: "-0.02em" }}
+          >
             What People Say
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -270,25 +327,39 @@ export default function HomePage() {
       {/* ── LIFE AT QBITUM ───────────────────────────────────────────── */}
       <section className="py-24" style={{ background: "#0d0f1a" }}>
         <div className="max-w-[1440px] mx-auto px-8">
-          <div className="flex flex-col lg:flex-row items-start gap-14 mb-12">
-            <div className="flex-1">
-              <p className="section-label mb-4">People & culture</p>
-              <h2 className="text-4xl font-extrabold leading-tight" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8" }}>
-                Life at Qbitum
-              </h2>
-            </div>
-            <p className="flex-1 text-sm leading-relaxed self-end" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)", maxWidth: "480px" }}>
-              We are a team of passionate, diverse, and innovative individuals who thrive
-              in a collaborative environment. Growth, inclusivity, and continuous learning
-              are at our core.
-            </p>
-          </div>
+          <p className="section-label mb-4">People &amp; culture</p>
+          <h2
+            className="text-4xl font-bold leading-tight mb-4"
+            style={{ fontFamily: "var(--font-sans)", color: "#f0f2f8", letterSpacing: "-0.02em" }}
+          >
+            Life at Qbitum
+          </h2>
+          <p
+            className="leading-relaxed mb-12"
+            style={{ color: "#8892a4", maxWidth: "520px", fontSize: "1rem" }}
+          >
+            We are a team of passionate, diverse, and innovative individuals who thrive
+            in a collaborative environment. Growth, inclusivity, and continuous learning
+            are at our core.
+          </p>
           <div className="grid grid-cols-2 gap-4">
             {LIFE_IMAGES.map((img, i) => (
-              <div key={i} className="relative rounded-2xl overflow-hidden group" style={{ height: "clamp(200px, 30vw, 400px)", border: "1px solid rgba(255,255,255,0.05)" }}>
-                <Image src={img} alt={`Life at Qbitum ${i + 1}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" style={{ opacity: 0.75 }} />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: "rgba(124,111,208,0.12)" }} />
+              <div
+                key={i}
+                className="relative overflow-hidden group"
+                style={{
+                  height: "clamp(200px, 30vw, 400px)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                  borderRadius: "4px",
+                }}
+              >
+                <Image
+                  src={img}
+                  alt={`Life at Qbitum ${i + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{ opacity: 0.82 }}
+                />
               </div>
             ))}
           </div>
@@ -296,33 +367,40 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA BANNER ───────────────────────────────────────────────── */}
-      <section className="py-20 px-8" style={{ background: "#07080f" }}>
-        <div className="max-w-[1440px] mx-auto">
-          <div className="relative rounded-3xl overflow-hidden px-12 py-20 text-center"
-            style={{ background: "linear-gradient(135deg, rgba(124,111,208,0.15) 0%, rgba(13,15,26,0.9) 40%, rgba(15,184,160,0.12) 100%)", border: "1px solid rgba(124,111,208,0.2)" }}>
-            {/* Glow orbs inside CTA */}
-            <div className="glow-orb" style={{ width: 400, height: 400, background: "radial-gradient(circle, rgba(124,111,208,0.2) 0%, transparent 70%)", top: "50%", left: "0%", transform: "translate(-30%, -50%)" }} />
-            <div className="glow-orb" style={{ width: 300, height: 300, background: "radial-gradient(circle, rgba(15,184,160,0.15) 0%, transparent 70%)", top: "50%", right: "0%", transform: "translate(30%, -50%)" }} />
+      <section
+        className="relative overflow-hidden py-40"
+        style={{ background: "#07080f", borderTop: "1px solid rgba(255,255,255,0.06)" }}
+      >
+        {/* Ambient glows */}
+        <div
+          className="glow-orb"
+          style={{ width: 600, height: 600, background: "radial-gradient(circle, rgba(124,111,208,0.12) 0%, transparent 65%)", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }}
+        />
+        <div className="absolute inset-0 neural-grid opacity-20" />
 
-            <div className="relative z-10">
-              <p className="section-label mb-5">Ready to build?</p>
-              <h2 className="text-4xl lg:text-6xl font-extrabold mb-6 gradient-text" style={{ fontFamily: "var(--font-syne)" }}>
-                Let's work together
-              </h2>
-              <p className="text-sm mb-10 mx-auto" style={{ color: "#8892a4", maxWidth: "480px", fontFamily: "var(--font-dm-sans)", lineHeight: 1.7 }}>
-                Whether you're launching a startup or scaling an enterprise, Qbitum's team
-                is ready to turn your vision into reality.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/contact" className="btn-glow px-10 py-4 text-sm">
-                  Get in Touch
-                </Link>
-                <Link href="/about" className="btn-outline-glow px-10 py-4 text-sm">
-                  About Us
-                </Link>
-              </div>
-            </div>
-          </div>
+        <div className="relative z-10 max-w-[1440px] mx-auto px-8 text-center">
+          <p className="section-label mb-6">Ready to build?</p>
+          <h2
+            className="font-bold leading-tight mb-6"
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+              color: "#f0f2f8",
+              letterSpacing: "-0.03em",
+            }}
+          >
+            Let&apos;s work together
+          </h2>
+          <p
+            className="mb-10 mx-auto"
+            style={{ color: "#8892a4", maxWidth: "480px", lineHeight: 1.7 }}
+          >
+            Whether you&apos;re launching a startup or scaling an enterprise, Qbitum&apos;s
+            team is ready to turn your vision into reality.
+          </p>
+          <Link href="/contact" className="btn-glow px-10 py-4 text-sm inline-block">
+            Get in Touch
+          </Link>
         </div>
       </section>
     </>

@@ -20,15 +20,15 @@ export default function ContactPage() {
             <div className="w-8 h-px" style={{ background: "#0fb8a0" }} />
             <span className="section-label">Get in touch</span>
           </div>
-          <h1 className="font-extrabold leading-tight" style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem, 5vw, 4.5rem)", color: "#f0f2f8" }}>
+          <h1 className="font-bold leading-tight" style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(2rem, 5vw, 4.5rem)", color: "#f0f2f8" }}>
             Let&apos;s build something<br /><span className="gradient-text">great together</span>
           </h1>
-          <p className="mt-4 text-sm" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)", maxWidth: "480px", lineHeight: 1.7 }}>
+          <p className="mt-4 text-sm" style={{ color: "#8892a4", fontFamily: "var(--font-sans)", maxWidth: "480px", lineHeight: 1.7 }}>
             Have a project in mind? We&apos;d love to hear about it. Drop us a message and a member of our team will respond within 24 hours.
           </p>
           <div className="flex flex-wrap gap-4 mt-6">
             {["Response within 24h", "No commitment required", "Free initial consultation"].map((t) => (
-              <span key={t} className="text-xs px-4 py-2 rounded-full" style={{ background: "rgba(15,184,160,0.1)", border: "1px solid rgba(15,184,160,0.2)", color: "#0fb8a0", fontFamily: "var(--font-dm-sans)" }}>
+              <span key={t} className="text-xs px-4 py-2 rounded-full" style={{ background: "rgba(15,184,160,0.1)", border: "1px solid rgba(15,184,160,0.2)", color: "#0fb8a0", fontFamily: "var(--font-sans)" }}>
                 ✓ {t}
               </span>
             ))}
@@ -79,14 +79,14 @@ export default function ContactPage() {
                     <svg width="22" height="22" viewBox="0 0 24 24">{item.icon}</svg>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#4a5568", fontFamily: "var(--font-syne)" }}>{item.label}</p>
+                    <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#4a5568", fontFamily: "var(--font-sans)" }}>{item.label}</p>
                     {item.href ? (
                       <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
-                        className="text-sm hover:text-white transition-colors whitespace-pre-line" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
+                        className="text-sm hover:text-white transition-colors whitespace-pre-line" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-sm whitespace-pre-line" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>{item.value}</p>
+                      <p className="text-sm whitespace-pre-line" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -94,9 +94,9 @@ export default function ContactPage() {
 
               {/* Quick response guarantee */}
               <div className="rounded-2xl p-6" style={{ background: "linear-gradient(135deg, rgba(124,111,208,0.12), rgba(15,184,160,0.08))", border: "1px solid rgba(124,111,208,0.2)" }}>
-                <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#0fb8a0", fontFamily: "var(--font-syne)" }}>Response time</p>
-                <p className="text-3xl font-extrabold gradient-text" style={{ fontFamily: "var(--font-syne)" }}>Under 24h</p>
-                <p className="text-xs mt-2" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>We respond to all inquiries within one business day.</p>
+                <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#0fb8a0", fontFamily: "var(--font-sans)" }}>Response time</p>
+                <p className="text-3xl font-bold gradient-text" style={{ fontFamily: "var(--font-sans)" }}>Under 24h</p>
+                <p className="text-xs mt-2" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>We respond to all inquiries within one business day.</p>
               </div>
             </div>
           </div>

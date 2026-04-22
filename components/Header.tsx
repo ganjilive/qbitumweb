@@ -30,7 +30,7 @@ export default function Header() {
               href={link.href}
               className="relative px-4 py-2 text-sm font-medium transition-colors duration-200"
               style={{
-                fontFamily: "var(--font-dm-sans)",
+                fontFamily: "var(--font-sans)",
                 color: pathname === link.href ? "#a094e8" : "#8892a4",
               }}
             >
@@ -47,14 +47,14 @@ export default function Header() {
           <a
             href="mailto:info@qbitum.com"
             className="text-sm text-[#8892a4] hover:text-white transition-colors"
-            style={{ fontFamily: "var(--font-dm-sans)" }}
+            style={{ fontFamily: "var(--font-sans)" }}
           >
             info@qbitum.com
           </a>
           <Link
             href="/contact"
             className="btn-glow px-5 py-2.5 text-sm"
-            style={{ fontFamily: "var(--font-dm-sans)" }}
+            style={{ fontFamily: "var(--font-sans)" }}
           >
             Get Started
           </Link>
@@ -84,7 +84,7 @@ export default function Header() {
               style={{
                 color: pathname === link.href ? "#a094e8" : "#8892a4",
                 borderColor: "rgba(255,255,255,0.05)",
-                fontFamily: "var(--font-dm-sans)",
+                fontFamily: "var(--font-sans)",
               }}
             >
               {link.label}
