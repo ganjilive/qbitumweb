@@ -29,25 +29,46 @@ export const EXPERTISE_TILES = [
     description:
       "We help businesses define and execute AI strategies that align with their goals, turning complex technology into competitive advantage.",
     icon: "🤖",
+    image: "/images/service-ai-strategy.jpg",
+    tags: ["AI STRATEGY", "ADVISORY"],
   },
   {
     title: "ML Model Development",
     description:
       "Custom machine learning models built and deployed to solve real business problems, from predictive analytics to intelligent automation.",
     icon: "🧠",
+    image: "/images/service-ml.jpg",
+    tags: ["MACHINE LEARNING", "AUTOMATION"],
   },
   {
     title: "Cloud Engineering",
     description:
       "Scalable, secure cloud infrastructure designed for modern applications — from architecture to deployment and ongoing optimization.",
     icon: "☁️",
+    image: "/images/service-cloud.jpg",
+    tags: ["AWS", "GCP", "AZURE"],
   },
   {
     title: "Data Engineering",
     description:
       "End-to-end data pipelines and platforms that transform raw data into reliable, actionable insights for your organization.",
     icon: "📊",
+    image: "/images/service-digital.jpg",
+    tags: ["PIPELINES", "ANALYTICS"],
   },
+];
+
+export const PARTNER_NAMES = [
+  "Google Cloud",
+  "Amazon Web Services",
+  "Microsoft Azure",
+  "OpenAI",
+  "Anthropic",
+  "TensorFlow",
+  "Kubernetes",
+  "Next.js",
+  "Google for Startups",
+  "nCinga",
 ];
 
 export const HOME_SERVICES = [

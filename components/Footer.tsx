@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Col 1 */}
           <div className="flex flex-col gap-6 lg:col-span-1">
             <QbitumLogo />
-            <p className="text-sm leading-relaxed" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>
               Qbitum Solutions transforms businesses with cutting-edge cloud engineering,
               AI/ML, product development, and digital transformation.
             </p>
@@ -23,7 +23,7 @@ export default function Footer() {
                 type="email"
                 placeholder="Your email"
                 className="flex-1 px-4 py-3 text-sm outline-none"
-                style={{ background: "rgba(255,255,255,0.03)", color: "#f0f2f8", fontFamily: "var(--font-dm-sans)" }}
+                style={{ background: "rgba(255,255,255,0.03)", color: "#f0f2f8", fontFamily: "var(--font-sans)" }}
               />
               <button
                 className="px-4 py-3 flex-shrink-0 transition-colors"
@@ -38,13 +38,13 @@ export default function Footer() {
 
           {/* Col 2: Company */}
           <div className="flex flex-col gap-5">
-            <h3 className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#0fb8a0", fontFamily: "var(--font-syne)" }}>
+            <h3 className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#0fb8a0", fontFamily: "var(--font-sans)" }}>
               Company
             </h3>
             <ul className="flex flex-col gap-3">
               {FOOTER_COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm transition-colors hover:text-white" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
+                  <Link href={link.href} className="text-sm transition-colors hover:text-white" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>
                     {link.label}
                   </Link>
                 </li>
@@ -54,13 +54,13 @@ export default function Footer() {
 
           {/* Col 3: Solutions */}
           <div className="flex flex-col gap-5">
-            <h3 className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#0fb8a0", fontFamily: "var(--font-syne)" }}>
+            <h3 className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#0fb8a0", fontFamily: "var(--font-sans)" }}>
               Solutions
             </h3>
             <ul className="flex flex-col gap-3">
               {FOOTER_SOLUTION_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm transition-colors hover:text-white" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
+                  <Link href={link.href} className="text-sm transition-colors hover:text-white" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>
                     {link.label}
                   </Link>
                 </li>
@@ -70,17 +70,17 @@ export default function Footer() {
 
           {/* Col 4: Contact */}
           <div className="flex flex-col gap-5">
-            <h3 className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#0fb8a0", fontFamily: "var(--font-syne)" }}>
+            <h3 className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#0fb8a0", fontFamily: "var(--font-sans)" }}>
               Contact
             </h3>
             <div className="flex flex-col gap-4">
               <div>
                 <p className="text-xs uppercase tracking-wide mb-1" style={{ color: "#4a5568" }}>Address</p>
-                <p className="text-sm" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>7/6 Bagatalle Rd,<br />Colombo 00300</p>
+                <p className="text-sm" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>7/6 Bagatalle Rd,<br />Colombo 00300</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide mb-1" style={{ color: "#4a5568" }}>Email</p>
-                <a href="mailto:info@qbitum.com" className="text-sm hover:text-white transition-colors" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>
+                <a href="mailto:info@qbitum.com" className="text-sm hover:text-white transition-colors" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>
                   info@qbitum.com
                 </a>
               </div>
@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="divider-gradient mb-8" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs" style={{ color: "#4a5568", fontFamily: "var(--font-dm-sans)" }}>
+          <p className="text-xs" style={{ color: "#4a5568", fontFamily: "var(--font-sans)" }}>
             © {new Date().getFullYear()} Qbitum Solutions. All rights reserved.
           </p>
           <div className="flex items-center gap-6">

@@ -9,53 +9,77 @@ interface ServiceTileProps {
   index?: number;
 }
 
-const ACCENT_COLORS = [
-  { border: "rgba(124,111,208,0.3)", glow: "rgba(124,111,208,0.1)", text: "#a094e8", icon: "#7c6fd0" },
-  { border: "rgba(59,130,246,0.3)", glow: "rgba(59,130,246,0.1)", text: "#93c5fd", icon: "#3b82f6" },
-  { border: "rgba(15,184,160,0.3)", glow: "rgba(15,184,160,0.1)", text: "#5eead4", icon: "#0fb8a0" },
-  { border: "rgba(124,111,208,0.3)", glow: "rgba(124,111,208,0.1)", text: "#a094e8", icon: "#7c6fd0" },
-  { border: "rgba(59,130,246,0.3)", glow: "rgba(59,130,246,0.1)", text: "#93c5fd", icon: "#3b82f6" },
-  { border: "rgba(15,184,160,0.3)", glow: "rgba(15,184,160,0.1)", text: "#5eead4", icon: "#0fb8a0" },
-  { border: "rgba(124,111,208,0.3)", glow: "rgba(124,111,208,0.1)", text: "#a094e8", icon: "#7c6fd0" },
+const ACCENTS = [
+  { border: "rgba(124,111,208,0.35)", glow: "rgba(124,111,208,0.08)", text: "#a094e8" },
+  { border: "rgba(59,130,246,0.35)",  glow: "rgba(59,130,246,0.08)",  text: "#93c5fd" },
+  { border: "rgba(15,184,160,0.35)",  glow: "rgba(15,184,160,0.08)",  text: "#5eead4" },
+  { border: "rgba(124,111,208,0.35)", glow: "rgba(124,111,208,0.08)", text: "#a094e8" },
+  { border: "rgba(59,130,246,0.35)",  glow: "rgba(59,130,246,0.08)",  text: "#93c5fd" },
+  { border: "rgba(15,184,160,0.35)",  glow: "rgba(15,184,160,0.08)",  text: "#5eead4" },
+  { border: "rgba(124,111,208,0.35)", glow: "rgba(124,111,208,0.08)", text: "#a094e8" },
 ];
 
 export default function ServiceTile({ slug, title, shortDesc, index = 0 }: ServiceTileProps) {
-  const accent = ACCENT_COLORS[index % ACCENT_COLORS.length];
+  const accent = ACCENTS[index % ACCENTS.length];
   return (
     <Link href={`/services/${slug}`} className="block group">
       <div
-        className="rounded-2xl p-8 h-full flex flex-col gap-4 transition-all duration-300"
+        className="h-full flex flex-col gap-4 p-7 transition-all duration-300 relative overflow-hidden"
         style={{
           background: "rgba(255,255,255,0.02)",
-          border: `1px solid rgba(255,255,255,0.06)`,
+          border: "1px solid rgba(255,255,255,0.07)",
+          borderRadius: "4px",
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLElement).style.border = `1px solid ${accent.border}`;
-          (e.currentTarget as HTMLElement).style.background = accent.glow;
-          (e.currentTarget as HTMLElement).style.boxShadow = `0 0 40px ${accent.glow}`;
+          const el = e.currentTarget as HTMLElement;
+          el.style.borderColor = accent.border;
+          el.style.background = accent.glow;
+          el.style.boxShadow = `0 0 40px ${accent.glow}`;
         }}
         onMouseLeave={(e) => {
-          (e.currentTarget as HTMLElement).style.border = "1px solid rgba(255,255,255,0.06)";
-          (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.02)";
-          (e.currentTarget as HTMLElement).style.boxShadow = "none";
+          const el = e.currentTarget as HTMLElement;
+          el.style.borderColor = "rgba(255,255,255,0.07)";
+          el.style.background = "rgba(255,255,255,0.02)";
+          el.style.boxShadow = "none";
         }}
       >
-        <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-          style={{ background: `${accent.glow}`, border: `1px solid ${accent.border}` }}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={accent.icon} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <h3 className="text-base font-bold transition-colors" style={{ fontFamily: "var(--font-syne)", color: "#f0f2f8" }}>
-          {title}
-        </h3>
-        <p className="text-sm leading-relaxed flex-1" style={{ color: "#8892a4", fontFamily: "var(--font-dm-sans)" }}>{shortDesc}</p>
-        <div className="flex items-center gap-2 text-xs font-semibold mt-2 transition-all" style={{ color: accent.text, fontFamily: "var(--font-dm-sans)" }}>
-          Explore
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+        {/* Corner accent */}
+        <div
+          className="absolute top-0 left-0 w-12 h-12 pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+          style={{ borderTop: `1px solid ${accent.text}50`, borderLeft: `1px solid ${accent.text}50` }}
+        />
+
+        <div className="flex items-start justify-between">
+          <span className="mono text-xs" style={{ color: "#4a5568" }}>
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <svg
+            width="14" height="14" viewBox="0 0 16 16" fill="none"
+            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1 group-hover:translate-x-0 transition-transform"
+            style={{ color: accent.text }}
+          >
             <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
+
+        <h3
+          className="text-base font-bold"
+          style={{ fontFamily: "var(--font-sans)", color: "#f0f2f8", lineHeight: 1.3 }}
+        >
+          {title}
+        </h3>
+        <p
+          className="text-sm leading-relaxed flex-1"
+          style={{ color: "#8892a4" }}
+        >
+          {shortDesc}
+        </p>
+        <span
+          className="text-xs font-semibold transition-colors"
+          style={{ color: accent.text, fontFamily: "var(--font-sans)" }}
+        >
+          Explore →
+        </span>
       </div>
     </Link>
   );

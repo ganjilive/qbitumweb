@@ -14,14 +14,16 @@
   --color-blue: #3b82f6;
   --color-teal: #0fb8a0;
   --color-teal-bright: #2dd4bf;
+  --color-amber: #d4a853;
 
   /* Text */
   --color-text-primary: #f0f2f8;
   --color-text-secondary: #8892a4;
   --color-text-muted: #4a5568;
 
-  --font-family-display: var(--font-syne), "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-  --font-family-body: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-family-body: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: var(--font-mono), "Courier New", monospace;
 }
 
 *, *::before, *::after {
@@ -40,7 +42,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle noise texture overlay */
+/* Subtle noise texture overlay — reduced for cleaner editorial feel */
 body::before {
   content: "";
   position: fixed;
@@ -48,10 +50,10 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
-  opacity: 0.4;
+  opacity: 0.15;
 }
 
-/* Gradient text utility */
+/* Gradient text utility — use sparingly */
 .gradient-text {
   background: linear-gradient(135deg, #a094e8 0%, #3b82f6 45%, #0fb8a0 100%);
   -webkit-background-clip: text;
@@ -66,7 +68,7 @@ body::before {
   background-clip: text;
 }
 
-/* Glow orb — ambient background element */
+/* Glow orb — ambient background element (use minimally) */
 .glow-orb {
   position: absolute;
   border-radius: 50%;
@@ -92,18 +94,18 @@ body::before {
 }
 
 .glass-card-hover:hover {
-  background: rgba(124, 111, 208, 0.08);
-  border-color: rgba(124, 111, 208, 0.3);
-  box-shadow: 0 0 40px rgba(124, 111, 208, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.04);
 }
 
-/* Glow button */
+/* Glow button — keep for contact form */
 .btn-glow {
   position: relative;
   background: linear-gradient(135deg, #7c6fd0, #3b82f6);
   color: white;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -112,34 +114,64 @@ body::before {
   opacity: 0.95;
 }
 
+/* Minimal outlined button — Snapdrum-style */
 .btn-outline-glow {
   background: transparent;
-  border: 1px solid rgba(124, 111, 208, 0.5);
-  color: #a094e8;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #f0f2f8;
+  border-radius: 4px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .btn-outline-glow:hover {
-  border-color: #7c6fd0;
-  box-shadow: 0 0 24px rgba(124, 111, 208, 0.3);
-  color: #c4bbff;
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
 }
 
-/* Section label */
+/* Section label — amber editorial style with mono font */
 .section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #0fb8a0;
+  color: #d4a853;
+  font-family: var(--font-family-mono);
 }
 
-/* Horizontal divider with gradient */
+/* Mono utility */
+.mono {
+  font-family: var(--font-family-mono);
+}
+
+/* Stat values — large numbers in mono */
+.stat-value {
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* AI-style tech tag chips */
+.tag-chip {
+  font-family: var(--font-family-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Horizontal divider */
 .divider-gradient {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(124, 111, 208, 0.4), rgba(15, 184, 160, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
 }
 
 /* Scrollbar hide */
@@ -158,13 +190,59 @@ body::before {
 .animate-fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.7s; animation-timing-function: ease; }
 .animate-fade-up-delay-3 { animation-delay: 0.35s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.7s; animation-timing-function: ease; }
 
-/* Pulse glow for decorative elements */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.9; }
+/* Marquee animation for logo strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-.animate-pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+/* Gradient mask for marquee — fades edges */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* Banner scan-line sweep */
+@keyframes scan {
+  0%   { top: -2px; opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+.animate-scan {
+  animation: scan 8s ease-in-out infinite;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* Neural dot grid — AI-flavored version of dot-grid */
+.neural-grid {
+  background-image: radial-gradient(circle, rgba(124,111,208,0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Corner bracket accent */
+.corner-tl::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 16px; height: 16px;
+  border-top: 1px solid rgba(15,184,160,0.5);
+  border-left: 1px solid rgba(15,184,160,0.5);
+}
+.corner-br::after {
+  content: "";
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 16px; height: 16px;
+  border-bottom: 1px solid rgba(15,184,160,0.5);
+  border-right: 1px solid rgba(15,184,160,0.5);
 }
 
 /* Subtle grid lines */

@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { Urbanist, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const bricolage = Bricolage_Grotesque({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-sans",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const dmSans = DM_Sans({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-mono",
   display: "swap",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${urbanist.variable} ${spaceMono.variable}`}>
       <body className="bg-[#07080f]">
         <Header />
         <main>{children}</main>
