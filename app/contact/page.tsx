@@ -47,7 +47,9 @@ export default function ContactPage() {
             </div>
 
             {/* Info */}
-            <div className="lg:col-span-2 flex flex-col gap-8 pt-2">
+            <div className="lg:col-span-2">
+              <p className="section-label mb-6">Contact details</p>
+              <div className="flex flex-col gap-8">
               {[
                 {
                   label: "Address",
@@ -98,6 +100,7 @@ export default function ContactPage() {
                 <p className="text-3xl font-bold gradient-text" style={{ fontFamily: "var(--font-sans)" }}>Under 24h</p>
                 <p className="text-xs mt-2" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>We respond to all inquiries within one business day.</p>
               </div>
+            </div>
             </div>
           </div>
         </div>

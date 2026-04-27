@@ -121,8 +121,9 @@ export default function AboutPage() {
               letterSpacing: "-0.025em",
             }}
           >
-            We partner with global brands, turning challenges into growth with
-            world-class design, engineering, and AI expertise.
+            We partner with ambitious startups and growing companies, turning ideas into
+            products and products into businesses — with world-class design, engineering,
+            and strategic expertise.
           </p>
           <div className="divider-gradient mt-16" />
         </div>

@@ -1,13 +1,11 @@
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "AI Services", href: "/services/ai-strategy" },
   { label: "Contact Us", href: "/contact" },
 ];
 
 export const COMPANY_HISTORY =
-  "Founded in 2014, nCinga set out to transform manufacturing with its smart factory solution, nFactory. By 2018, it became a world-leading MES platform, powering efficiency across the global apparel industry. Its success led to a landmark acquisition by a Singapore-based unicorn in 2019, marking one of Sri Lanka's biggest tech exits. Building on this momentum, Nventures launched Qbitum in 2022 to drive tech innovation. By 2024, Qbitum joined the Google for Startups Cloud Program for AI, advancing its global AI/ML capabilities. Today, we turn challenges into opportunities, fueling growth with world-class tech, design, and marketing expertise.";
+  "Founded in 2014, nCinga set out to transform manufacturing with its smart factory solution, nFactory. By 2018, it became a world-leading MES platform, powering efficiency across the global apparel industry. Its success led to a landmark acquisition by a Singapore-based unicorn in 2019, marking one of Sri Lanka's biggest tech exits. Building on this momentum, Nventures launched Qbitum in 2022 to drive tech innovation. By 2024, Qbitum joined the Google for Startups Cloud Program, reinforcing our commitment to engineering excellence at scale. Today, we partner with startups and enterprises to turn ambition into shipped products — through studio-quality build, complete development teams, and hands-on consultancy.";
 
 export const FOOTER_COMPANY_LINKS = [
   { label: "About Us", href: "/about" },
@@ -17,44 +15,36 @@ export const FOOTER_COMPANY_LINKS = [
 ];
 
 export const FOOTER_SOLUTION_LINKS = [
-  { label: "Product Engineering", href: "/services/product-engineering" },
-  { label: "AI Strategy & Advisory", href: "/services/ai-strategy" },
-  { label: "Project Outsourcing", href: "/services/project-outsourcing" },
-  { label: "Dedicated Teams", href: "/services/dedicated-teams" },
+  { label: "Idea to MVP", href: "/#services" },
+  { label: "Development Outsourcing", href: "/#services" },
+  { label: "Staff Augmentation", href: "/#services" },
+  { label: "Design & Development Consultancy", href: "/#services" },
 ];
 
 export const EXPERTISE_TILES = [
   {
-    title: "AI Strategy & Advisory",
+    title: "Idea to MVP",
     description:
-      "We help businesses define and execute AI strategies that align with their goals, turning complex technology into competitive advantage.",
-    icon: "🤖",
-    image: "/images/service-ai-strategy.jpg",
-    tags: ["AI STRATEGY", "ADVISORY"],
+      "Lean workshops, fast prototyping, and a structured build process that takes you from concept to shipped product in weeks.",
+    tags: ["PRODUCT DISCOVERY", "MVP BUILD"],
   },
   {
-    title: "ML Model Development",
+    title: "Development Outsourcing",
     description:
-      "Custom machine learning models built and deployed to solve real business problems, from predictive analytics to intelligent automation.",
-    icon: "🧠",
-    image: "/images/service-ml.jpg",
-    tags: ["MACHINE LEARNING", "AUTOMATION"],
+      "Full, pre-formed engineering teams — tech lead, engineers, designer, QA — embedded in your workflow from day one.",
+    tags: ["TEAM VELOCITY", "EMBEDDED TEAMS"],
   },
   {
-    title: "Cloud Engineering",
+    title: "Staff Augmentation",
     description:
-      "Scalable, secure cloud infrastructure designed for modern applications — from architecture to deployment and ongoing optimization.",
-    icon: "☁️",
-    image: "/images/service-cloud.jpg",
-    tags: ["AWS", "GCP", "AZURE"],
+      "Senior engineers and specialists who slot into your existing team, aligned to your stack and process.",
+    tags: ["ON-DEMAND TALENT", "SCALE-UP"],
   },
   {
-    title: "Data Engineering",
+    title: "Design & Development Consultancy",
     description:
-      "End-to-end data pipelines and platforms that transform raw data into reliable, actionable insights for your organization.",
-    icon: "📊",
-    image: "/images/service-digital.jpg",
-    tags: ["PIPELINES", "ANALYTICS"],
+      "Architecture reviews, product design advisory, and engineering leadership — accessed as a service.",
+    tags: ["ADVISORY", "ARCHITECTURE"],
   },
 ];
 
@@ -73,22 +63,22 @@ export const PARTNER_NAMES = [
 
 export const HOME_SERVICES = [
   {
-    title: "Product Engineering",
+    title: "Idea to MVP",
     description:
-      "Develop powerful web and mobile apps tailored to address specific business challenges.",
+      "We take your concept through lean product workshops, rapid prototyping, and full-stack build — shipping a working MVP in weeks.",
     image: "/images/product-engineering.jpg",
     imageLeft: false,
   },
   {
-    title: "Product Outsourcing",
-    description: "Tailored digital solutions from start to finish.",
-    image: "/images/product-outsourcing.jpg",
+    title: "Development Outsourcing",
+    description: "Pre-assembled, senior-led engineering teams that embed in your business and deliver from day one.",
+    image: "/images/dedicated-teams.jpg",
     imageLeft: true,
   },
   {
-    title: "Dedicated Remote Teams",
-    description: "Effortless integration with your in-house workforce.",
-    image: "/images/dedicated-teams.jpg",
+    title: "Staff Augmentation",
+    description: "Senior engineers and specialists placed directly into your team — filling gaps, accelerating delivery.",
+    image: "/images/product-outsourcing.jpg",
     imageLeft: false,
   },
 ];
@@ -153,66 +143,159 @@ export const CORE_VALUES = [
 
 export const SERVICES_LIST = [
   {
-    slug: "ai-strategy",
-    title: "AI Strategy & Advisory",
+    slug: "idea-to-mvp",
+    title: "Idea to MVP",
     shortDesc:
-      "Define and execute AI strategies that turn complex technology into competitive advantage.",
+      "From whiteboard to working product in weeks — strategy, prototyping, and build under one roof.",
     fullDesc:
-      "We help businesses of all sizes navigate the AI landscape. Our experts work closely with your leadership team to identify AI opportunities, assess feasibility, and develop a clear roadmap for implementation. From proof-of-concept to full-scale deployment, we guide you every step of the way.",
-    image: "/images/service-ai-strategy.jpg",
+      "Most startups stall between idea and execution. Qbitum collapses that gap. We begin with lean product workshops to stress-test your concept, define the minimum viable scope, and map the right tech choices. We prototype quickly to validate assumptions with real users before committing to build. The result: a production-ready MVP delivered in weeks, not months — with a clear path to what comes next.",
+    image: "/images/product-engineering.jpg",
+    highlights: [
+      "Lean product discovery workshop",
+      "MVP scope document & feature map",
+      "Interactive prototype for user validation",
+      "Full-stack MVP build (web and/or mobile)",
+      "Deployment to production",
+      "Post-launch roadmap & handoff",
+    ],
+    process: [
+      {
+        title: "Discovery Workshop",
+        desc: "We run a focused lean product workshop to map your idea, stress-test assumptions, and identify the core value proposition worth building.",
+      },
+      {
+        title: "Scope & Architecture",
+        desc: "Define the minimum feature set, choose the right tech stack, and produce a clear build plan with timeline and milestones.",
+      },
+      {
+        title: "Prototype",
+        desc: "Build a clickable, testable prototype and put it in front of real users to validate the concept before a line of production code is written.",
+      },
+      {
+        title: "Build",
+        desc: "Agile sprints deliver working software incrementally, with regular demos so you see progress at every step.",
+      },
+      {
+        title: "Launch & Handoff",
+        desc: "Deploy to production, hand over source code and documentation, and define the roadmap for what comes next.",
+      },
+    ],
   },
   {
-    slug: "product-engineering",
-    title: "Product Engineering for Startups",
+    slug: "development-teams",
+    title: "Development Outsourcing",
     shortDesc:
-      "Turn bold ideas into reality — helping you build, scale, and succeed in competitive markets.",
+      "A fully assembled, senior-led development team — embedded in your business and built for velocity.",
     fullDesc:
-      "At Qbitum, we know startups face unique challenges. That's why our product engineering services turn bold ideas into reality — helping you build, scale, and succeed in competitive markets. From MVP to production-grade product, we bring the engineering rigour your vision deserves.",
-    image: "/images/service-product-engineering.jpg",
+      "Hiring and retaining a full engineering team takes months and capital most companies cannot spare. Qbitum provides complete, pre-formed development teams — engineers, a tech lead, a designer, and a QA specialist — who embed directly into your product process. They operate on your tools, in your rituals, and against your roadmap. You get the output of a seasoned in-house team from day one.",
+    image: "/images/dedicated-teams.jpg",
+    highlights: [
+      "Full team: tech lead, engineers, designer & QA",
+      "Works inside your tools and processes",
+      "Sprint-based delivery from day one",
+      "Regular demos and standups",
+      "Scalable team composition over time",
+      "HR and administration handled by Qbitum",
+    ],
+    process: [
+      {
+        title: "Team Design",
+        desc: "We assess your product, stack, and culture to design the right team composition — the exact mix of roles your roadmap needs.",
+      },
+      {
+        title: "Candidate Selection",
+        desc: "You meet and approve every team member before they start. No surprises.",
+      },
+      {
+        title: "Onboarding",
+        desc: "The team integrates into your codebase, tools, and ceremonies — typically ready to ship meaningful work within the first week.",
+      },
+      {
+        title: "Sprint Delivery",
+        desc: "The team operates inside your rhythm: standups, sprint planning, retrospectives, and regular demos — just like an in-house team.",
+      },
+      {
+        title: "Scale & Adjust",
+        desc: "As your roadmap evolves, we adjust team size and skill composition without the delays of open recruitment.",
+      },
+    ],
   },
   {
-    slug: "project-outsourcing",
-    title: "Project Outsourcing",
+    slug: "staff-augmentation",
+    title: "Staff Augmentation",
     shortDesc:
-      "Seamless, end-to-end software development tailored to your business.",
+      "Expand your team's capacity with senior engineers and specialists — on demand, no long-term overhead.",
     fullDesc:
-      "Seamless, end-to-end software development tailored to your business — so you can focus on growth while we handle the tech. Our experienced project teams manage the full software lifecycle, from requirements gathering through delivery, testing, and ongoing support.",
-    image: "/images/service-outsourcing.jpg",
+      "When your roadmap grows faster than your headcount can, Qbitum staff augmentation fills the gap precisely. We place senior engineers, designers, and technical specialists directly into your existing team — aligned to your stack, culture, and process. Whether you need to accelerate a sprint, cover a skill gap, or scale through a peak, our people integrate immediately and operate without friction.",
+    image: "/images/product-outsourcing.jpg",
+    highlights: [
+      "Pre-vetted senior engineers and specialists",
+      "Aligned to your stack and tooling",
+      "No recruitment or HR overhead for you",
+      "Flexible engagement length",
+      "Contributing within days of starting",
+      "Full IP ownership stays with you",
+    ],
+    process: [
+      {
+        title: "Needs Assessment",
+        desc: "A short call to understand the skill gap, your tech stack, team culture, and how quickly you need someone in place.",
+      },
+      {
+        title: "Candidate Matching",
+        desc: "We present 2–3 pre-vetted candidates within days, each aligned to your specific requirements and working style.",
+      },
+      {
+        title: "Selection & Contract",
+        desc: "You choose who you want. We handle contracts, HR administration, and payroll so you have zero overhead.",
+      },
+      {
+        title: "Integration",
+        desc: "Selected engineers join your communication channels, codebase, and workflow immediately — no lengthy onboarding ramp.",
+      },
+      {
+        title: "Ongoing Management",
+        desc: "We handle performance, time-tracking, and any HR matters behind the scenes so you stay focused on shipping.",
+      },
+    ],
   },
   {
-    slug: "dedicated-teams",
-    title: "Dedicated Remote Teams",
+    slug: "design-development-consultancy",
+    title: "Design & Development Consultancy",
     shortDesc:
-      "Flexible, scalable remote teams that work seamlessly with your in-house staff.",
+      "Expert advisory on product design, architecture, and engineering decisions — when you need a clear head.",
     fullDesc:
-      "Qbitum builds remote teams that work seamlessly with your in-house staff, giving you flexible, scalable support as your business grows. Our engineers, designers, and product managers become a true extension of your organisation — aligned with your culture, tools, and goals.",
-    image: "/images/service-dedicated-teams.jpg",
-  },
-  {
-    slug: "cloud-engineering",
-    title: "Cloud Engineering",
-    shortDesc:
-      "Scalable, secure cloud infrastructure designed for modern applications.",
-    fullDesc:
-      "From cloud migration and architecture design to DevOps automation and cost optimisation, Qbitum's cloud engineers deliver the infrastructure foundations that modern digital products are built on. We work across AWS, GCP, and Azure.",
-    image: "/images/service-cloud.jpg",
-  },
-  {
-    slug: "ml-development",
-    title: "ML Model Development",
-    shortDesc:
-      "Custom machine learning models built to solve real business problems.",
-    fullDesc:
-      "Our data scientists and ML engineers design, build, and deploy custom models — from predictive analytics and recommendation engines to computer vision and NLP. Every model is built with production deployment and long-term maintainability in mind.",
-    image: "/images/service-ml.jpg",
-  },
-  {
-    slug: "digital-transformation",
-    title: "Digital Transformation",
-    shortDesc:
-      "End-to-end transformation programmes for enterprises ready to evolve.",
-    fullDesc:
-      "We partner with enterprises to reimagine their digital operations — from legacy modernisation and process automation to new digital product lines. Our transformation programmes are business-outcome driven, pragmatic, and designed for sustainable change.",
-    image: "/images/service-digital.jpg",
+      "Technology decisions made without the right expertise cost organisations years of rework. Qbitum's consultancy practice gives you direct access to senior practitioners in product design, software architecture, and engineering leadership. Engagements range from a single architecture review to embedded advisory across a quarter — we bring the outside perspective and technical depth to make better calls faster.",
+    image: "/images/product-engineering.jpg",
+    highlights: [
+      "Architecture reviews and technical audits",
+      "Product design assessments and UX reviews",
+      "Engineering leadership advisory",
+      "Technology selection and vendor evaluation",
+      "Clear, written recommendations and documentation",
+      "Optional implementation support",
+    ],
+    process: [
+      {
+        title: "Engagement Scoping",
+        desc: "Define the problem, the deliverables, and the duration. Most engagements start with a half-day discovery session.",
+      },
+      {
+        title: "Discovery & Audit",
+        desc: "We review your codebase, designs, architecture, or processes — going deep on the area that matters most to you.",
+      },
+      {
+        title: "Analysis & Findings",
+        desc: "We synthesise our findings into a clear, prioritised set of observations, risks, and opportunities.",
+      },
+      {
+        title: "Recommendations",
+        desc: "We deliver actionable recommendations with enough context to understand the tradeoffs involved — written, not just verbal.",
+      },
+      {
+        title: "Implementation Support",
+        desc: "Optionally, we work alongside your team to help implement the recommended changes and ensure they land correctly.",
+      },
+    ],
   },
 ];

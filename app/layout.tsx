@@ -20,18 +20,18 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Qbitum Solutions — Product & Cloud Engineering",
+    default: "Qbitum Solutions — Product Studio & Development Teams",
     template: "%s | Qbitum Solutions",
   },
   description:
-    "Qbitum Solutions is a trailblazing tech company, transforming businesses with cutting-edge cloud engineering, AI/ML, product development, and digital transformation.",
+    "Qbitum Solutions is a product studio and engineering partner — helping startups launch MVPs, scaling teams with complete development squads, and advising on design and architecture.",
   keywords: [
-    "cloud engineering",
-    "AI/ML",
-    "product development",
-    "digital transformation",
-    "startup",
-    "software development",
+    "product studio",
+    "MVP development",
+    "dedicated development teams",
+    "staff augmentation",
+    "software consultancy",
+    "startup engineering",
   ],
 };
 

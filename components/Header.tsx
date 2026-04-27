@@ -56,7 +56,7 @@ export default function Header() {
             className="btn-glow px-5 py-2.5 text-sm"
             style={{ fontFamily: "var(--font-sans)" }}
           >
-            Get Started
+            Contact Us
           </Link>
         </div>
 
@@ -91,7 +91,7 @@ export default function Header() {
             </Link>
           ))}
           <Link href="/contact" className="btn-glow inline-block mt-5 px-5 py-2.5 text-sm">
-            Get Started
+            Contact Us
           </Link>
         </div>
       )}

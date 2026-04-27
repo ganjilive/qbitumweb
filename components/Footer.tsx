@@ -14,8 +14,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6 lg:col-span-1">
             <QbitumLogo />
             <p className="text-sm leading-relaxed" style={{ color: "#8892a4", fontFamily: "var(--font-sans)" }}>
-              Qbitum Solutions transforms businesses with cutting-edge cloud engineering,
-              AI/ML, product development, and digital transformation.
+              Qbitum Solutions is a product studio and engineering partner — helping companies launch MVPs, scale with complete development teams, and grow through expert consultancy.
             </p>
             {/* Newsletter */}
             <div className="flex rounded-lg overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.1)" }}>
