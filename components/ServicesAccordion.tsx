@@ -22,7 +22,7 @@ export default function ServicesAccordion() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-8">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-8">
         <p className="section-label mb-6">What we build</p>
         <h2
           className="font-bold leading-tight mb-16"
@@ -39,7 +39,7 @@ export default function ServicesAccordion() {
 
       {/* Service rows */}
       <div
-        className="relative z-10 max-w-[1440px] mx-auto px-8"
+        className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-8"
         style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
       >
         {SERVICES_LIST.map((service, i) => {
@@ -57,7 +57,7 @@ export default function ServicesAccordion() {
                 style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
               >
                 <div
-                  className="flex items-center gap-8 py-10 transition-colors duration-200"
+                  className="flex items-center gap-3 sm:gap-8 py-10 transition-colors duration-200"
                   style={{ paddingLeft: 0, paddingRight: 0 }}
                 >
                   {/* Number */}
@@ -136,10 +136,7 @@ export default function ServicesAccordion() {
                   transition: 'max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
               >
-                <div
-                  className="pb-12"
-                  style={{ paddingLeft: 'calc(80px + 2rem)' }}
-                >
+                <div className="pb-12 pl-0 sm:pl-28">
                   <p
                     className="text-base mb-8"
                     style={{ color: '#c8cfe0', lineHeight: 1.85, maxWidth: '680px' }}
