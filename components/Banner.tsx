@@ -70,6 +70,7 @@ export default function Banner({
         style={{
           background: "linear-gradient(to right, transparent, rgba(15,184,160,0.45), rgba(124,111,208,0.3), transparent)",
           zIndex: 3,
+          pointerEvents: "none",
         }}
       />
 
@@ -149,6 +150,7 @@ export default function Banner({
           height: isHero ? "180px" : "128px",
           background: "linear-gradient(to bottom, transparent, #07080f)",
           zIndex: 4,
+          pointerEvents: "none",
         }}
       />
     </section>
