@@ -132,7 +132,7 @@ export default function Banner({
                 {ctaLabel}
               </Link>
               <Link
-                href="/services"
+                href="/#services"
                 className="btn-outline-glow px-8 py-4 text-sm"
               >
                 Explore Services
