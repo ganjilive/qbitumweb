@@ -21,8 +21,8 @@ export default function HomePage() {
         imageSrc="/images/banner-home.jpg"
         imageAlt="Qbitum — Product Studio"
         labelText="Qbitum Solutions"
-        headline="We Build Products. We Scale Teams."
-        subtext="From idea to MVP in weeks, to complete development teams that embed in your business — Qbitum is the partner that ships."
+        headline="Ship Faster. Scale Smarter."
+        subtext="Whether you're launching a new product, scaling your engineering team, or fixing what's broken — Qbitum delivers the software expertise to get it done right."
         ctaHref="/contact"
         ctaLabel="Start a Conversation"
       />
